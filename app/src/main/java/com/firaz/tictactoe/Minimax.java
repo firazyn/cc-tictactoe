@@ -177,9 +177,6 @@ public class Minimax {
             }
         }
 
-//        System.out.printf("The value of the best Move " +
-//                "is : %d\n\n", bestVal);
-
         return bestMove;
     }
 
@@ -188,6 +185,8 @@ public class Minimax {
     public void setBoard(String[][] board){
         this.board = board;
         findBestMove(board);
+        getRow();
+        getCol();
     }
 
     public int getRow() {

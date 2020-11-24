@@ -105,14 +105,6 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
     }
 
     protected void checkBestMove() {
-//        String[][] field = new String[3][3];
-//
-//        for (int i = 0; i < 3; i++) {
-//            for (int j = 0; j < 3; j++) {
-//                field[i][j] = buttons[i][j].getText().toString();
-//            }
-//        }
-
         minimax.setBoard(board);
         row = minimax.getCol();
         col = minimax.getRow();
@@ -120,41 +112,37 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
     }
 
     private boolean checkForWin() {
-        String[][] field = new String[3][3];
-
-        //karena skrg ada gamestate mungkin ini bakalan diubah
-
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                field[i][j] = buttons[i][j].getText().toString();
+                board[i][j] = buttons[i][j].getText().toString();
             }
         }
 
         for (int i = 0; i < 3; i++) {
-            if (field[i][0].equals(field[i][1])
-                    && field[i][0].equals(field[i][2])
-                    && !field[i][0].equals("")) {
+            if (board[i][0].equals(board[i][1])
+                    && board[i][0].equals(board[i][2])
+                    && !board[i][0].equals("")) {
                 return true;
             }
         }
 
         for (int i = 0; i < 3; i++) {
-            if (field[0][i].equals(field[1][i])
-                    && field[0][i].equals(field[2][i])
-                    && !field[0][i].equals("")) {
+            if (board[0][i].equals(board[1][i])
+                    && board[0][i].equals(board[2][i])
+                    && !board[0][i].equals("")) {
                 return true;
             }
         }
 
-        if (field[0][0].equals(field[1][1])
-                && field[0][0].equals(field[2][2])
-                && !field[0][0].equals("")) {
+        if (board[0][0].equals(board[1][1])
+                && board[0][0].equals(board[2][2])
+                && !board[0][0].equals("")) {
             return true;
         }
 
-        if (field[0][2].equals(field[1][1])
-                && field[0][2].equals(field[2][0])
-                && !field[0][2].equals("")) {
+        if (board[0][2].equals(board[1][1])
+                && board[0][2].equals(board[2][0])
+                && !board[0][2].equals("")) {
             return true;
         }
 
