@@ -110,37 +110,39 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     }
 
     private boolean checkForWin() {
+        String[][] Board = new String[3][3];
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                board[i][j] = buttons[i][j].getText().toString();
+                Board[i][j] = board[i][j];
             }
         }
 
         for (int i = 0; i < 3; i++) {
-            if (board[i][0].equals(board[i][1])
-                    && board[i][0].equals(board[i][2])
-                    && !board[i][0].equals("")) {
+            if (Board[i][0].equals(Board[i][1])
+                    && Board[i][0].equals(Board[i][2])
+                    && !Board[i][0].equals("_")) {
                 return true;
             }
         }
 
         for (int i = 0; i < 3; i++) {
-            if (board[0][i].equals(board[1][i])
-                    && board[0][i].equals(board[2][i])
-                    && !board[0][i].equals("")) {
+            if (Board[0][i].equals(Board[1][i])
+                    && Board[0][i].equals(Board[2][i])
+                    && !Board[0][i].equals("_")) {
                 return true;
             }
         }
 
-        if (board[0][0].equals(board[1][1])
-                && board[0][0].equals(board[2][2])
-                && !board[0][0].equals("")) {
+        if (Board[0][0].equals(Board[1][1])
+                && Board[0][0].equals(Board[2][2])
+                && !Board[0][0].equals("_")) {
             return true;
         }
 
-        if (board[0][2].equals(board[1][1])
-                && board[0][2].equals(board[2][0])
-                && !board[0][2].equals("")) {
+        if (Board[0][2].equals(Board[1][1])
+                && Board[0][2].equals(Board[2][0])
+                && !Board[0][2].equals("_")) {
             return true;
         }
 
@@ -177,6 +179,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
+                board[i][j] = "_";
             }
         }
         roundCount = 0;
