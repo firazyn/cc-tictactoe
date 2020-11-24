@@ -15,9 +15,11 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
     private boolean player1Turn = true;
 
     private int roundCount;
-    private int player1Score;
-    private int player2Score;
+    private int player1Score, player2Score;
     int row, col;
+    String[][] board = {{"_","_","_"},
+                        {"_","_","_"},
+                        {"_","_","_"}};
 
     private TextView tvPlayer1Score, tvPlayer2Score;
     private TextView tvPlayer1Name, tvPlayer2Name, tvAI;
@@ -64,15 +66,22 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
 
     @Override
     public void onClick(View v) {
+
         if (!((Button) v).getText().toString().equals("")) {
             return;
         }
 
+        String buttonID = getResources().getResourceEntryName(v.getId()); //button_ij
+        int pointerOne = Integer.parseInt(buttonID.substring(7, buttonID.length()-1)); //dapat nilai i
+        int pointerTwo = Integer.parseInt(buttonID.substring(buttonID.length()-1)); //dapat nilai j
+
         if (player1Turn) {
             ((Button) v).setText("x");
-            checkBestMove();
+            board[pointerOne][pointerTwo] = "x";
         } else {
             ((Button) v).setText("o");
+            board[pointerOne][pointerTwo] = "o";
+            checkBestMove();
             //mungkin nanti disini
             //tambahin fungsi evaluasi
         }
@@ -95,16 +104,16 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         }
     }
 
-    public void checkBestMove() {
-        String[][] field = new String[3][3];
+    protected void checkBestMove() {
+//        String[][] field = new String[3][3];
+//
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 3; j++) {
+//                field[i][j] = buttons[i][j].getText().toString();
+//            }
+//        }
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
-                field[i][j] = buttons[i][j].getText().toString(); //kyknya salah disini
-            }
-        }
-
-        minimax.setBoard(field);
+        minimax.setBoard(board);
         row = minimax.getCol();
         col = minimax.getRow();
         tvAI.setText(row+"R"+" "+col+"C");
@@ -112,6 +121,8 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
 
     private boolean checkForWin() {
         String[][] field = new String[3][3];
+
+        //karena skrg ada gamestate mungkin ini bakalan diubah
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
@@ -178,6 +189,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
+                board[i][j] = "_";
             }
         }
         roundCount = 0;

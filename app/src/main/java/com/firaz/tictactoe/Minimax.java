@@ -15,7 +15,7 @@ public class Minimax {
     static Boolean isMovesLeft(String[][] board) {
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
-                if (board[i][j].equals(""))
+                if (board[i][j].equals("_"))
                     return true;
         return false;
     }
@@ -97,7 +97,7 @@ public class Minimax {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     // Check if cell is empty
-                    if (board[i][j].equals("")) {
+                    if (board[i][j].equals("_")) {
                         // Make the move
                         board[i][j] = player;
 
@@ -107,7 +107,7 @@ public class Minimax {
                                 depth + 1, !isMax));
 
                         // Undo the move
-                        board[i][j] = "";
+                        board[i][j] = "_";
                     }
                 }
             }
@@ -122,7 +122,7 @@ public class Minimax {
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     // Check if cell is empty
-                    if (board[i][j].equals("")) {
+                    if (board[i][j].equals("_")) {
                         // Make the move
                         board[i][j] = opponent;
 
@@ -132,7 +132,7 @@ public class Minimax {
                                 depth + 1, !isMax));
 
                         // Undo the move
-                        board[i][j] = "";
+                        board[i][j] = "_";
                     }
                 }
             }
@@ -154,7 +154,7 @@ public class Minimax {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 // Check if cell is empty
-                if (board[i][j].equals("")) {
+                if (board[i][j].equals("_")) {
                     // Make the move
                     board[i][j] = player;
 
@@ -163,7 +163,7 @@ public class Minimax {
                     int moveVal = minimax(board, 0, false);
 
                     // Undo the move
-                    board[i][j] = "";
+                    board[i][j] = "_";
 
                     // If the value of the current move is
                     // more than the best value, then update
