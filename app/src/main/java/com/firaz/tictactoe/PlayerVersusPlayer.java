@@ -16,15 +16,10 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     private boolean player1Turn = true;
 
     private int roundCount;
-    private int player1Score;
-    private int player2Score;
-    String[][] board = {{"_","_","_"},
-                        {"_","_","_"},
-                        {"_","_","_"}};
+    private int player1Score, player2Score;
 
     private TextView tvPlayer1Score, tvPlayer2Score;
     private TextView tvPlayer1Name, tvPlayer2Name;
-    private Button buttonReset, buttonNewGame;
     private Button[][] buttons = new Button[3][3];
 
     private String player1Name = "John";
@@ -56,8 +51,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
             }
         }
 
-        buttonReset = findViewById(R.id.button_reset);
-        buttonNewGame = findViewById(R.id.button_new);
+        Button buttonReset = findViewById(R.id.button_reset);
+        Button buttonNewGame = findViewById(R.id.button_new);
 
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,16 +76,10 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
             return;
         }
 
-        String buttonID = getResources().getResourceEntryName(v.getId()); //button_ij
-        int pointerOne = Integer.parseInt(buttonID.substring(7, buttonID.length()-1)); //dapat nilai i
-        int pointerTwo = Integer.parseInt(buttonID.substring(buttonID.length()-1)); //dapat nilai j
-
         if (player1Turn) {
             ((Button) v).setText("x");
-            board[pointerOne][pointerTwo] = "x";
         } else {
             ((Button) v).setText("o");
-            board[pointerOne][pointerTwo] = "o";
         }
         ((Button) v).setTextColor(Color.parseColor("#000000"));
 
@@ -114,14 +103,14 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                Board[i][j] = board[i][j];
+                Board[i][j] = buttons[i][j].getText().toString();
             }
         }
 
         for (int i = 0; i < 3; i++) {
             if (Board[i][0].equals(Board[i][1])
                     && Board[i][0].equals(Board[i][2])
-                    && !Board[i][0].equals("_")) {
+                    && !Board[i][0].equals("")) {
                 return true;
             }
         }
@@ -129,20 +118,20 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         for (int i = 0; i < 3; i++) {
             if (Board[0][i].equals(Board[1][i])
                     && Board[0][i].equals(Board[2][i])
-                    && !Board[0][i].equals("_")) {
+                    && !Board[0][i].equals("")) {
                 return true;
             }
         }
 
         if (Board[0][0].equals(Board[1][1])
                 && Board[0][0].equals(Board[2][2])
-                && !Board[0][0].equals("_")) {
+                && !Board[0][0].equals("")) {
             return true;
         }
 
         if (Board[0][2].equals(Board[1][1])
                 && Board[0][2].equals(Board[2][0])
-                && !Board[0][2].equals("_")) {
+                && !Board[0][2].equals("")) {
             return true;
         }
 
@@ -179,7 +168,6 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
-                board[i][j] = "_";
             }
         }
         roundCount = 0;

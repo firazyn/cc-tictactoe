@@ -16,10 +16,10 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
 
     private int roundCount;
     private int player1Score, player2Score;
-    int row, col;
-    String[][] board = {{"_","_","_"},
-                        {"_","_","_"},
-                        {"_","_","_"}};
+    private int row, col;
+    char[][] board = {{'_','_','_'},
+                        {'_','_','_'},
+                        {'_','_','_'}};
 
     private TextView tvPlayer1Score, tvPlayer2Score;
     private TextView tvPlayer1Name, tvPlayer2Name, tvAI;
@@ -77,11 +77,12 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
 
         if (player1Turn) {
             ((Button) v).setText("x");
-            board[pointerOne][pointerTwo] = "x";
+            board[pointerOne][pointerTwo] = 'x';
         } else {
             ((Button) v).setText("o");
-            board[pointerOne][pointerTwo] = "o";
-            checkBestMove();
+            board[pointerOne][pointerTwo] = 'o';
+            minimax.setBoard(board);
+            tvAI.setText(getRow() +"R"+" "+ getCol() +"C");
             //mungkin nanti disini
             //tambahin fungsi evaluasi
         }
@@ -104,26 +105,19 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         }
     }
 
-    protected void checkBestMove() {
-        minimax.setBoard(board);
-        row = minimax.getCol();
-        col = minimax.getRow();
-        tvAI.setText(row+"R"+" "+col+"C");
-    }
-
     private boolean checkForWin() {
         String[][] Board = new String[3][3];
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                Board[i][j] = board[i][j];
+                Board[i][j] = buttons[i][j].getText().toString();
             }
         }
 
         for (int i = 0; i < 3; i++) {
             if (Board[i][0].equals(Board[i][1])
                     && Board[i][0].equals(Board[i][2])
-                    && !Board[i][0].equals("_")) {
+                    && !Board[i][0].equals("")) {
                 return true;
             }
         }
@@ -131,20 +125,20 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         for (int i = 0; i < 3; i++) {
             if (Board[0][i].equals(Board[1][i])
                     && Board[0][i].equals(Board[2][i])
-                    && !Board[0][i].equals("_")) {
+                    && !Board[0][i].equals("")) {
                 return true;
             }
         }
 
         if (Board[0][0].equals(Board[1][1])
                 && Board[0][0].equals(Board[2][2])
-                && !Board[0][0].equals("_")) {
+                && !Board[0][0].equals("")) {
             return true;
         }
 
         if (Board[0][2].equals(Board[1][1])
                 && Board[0][2].equals(Board[2][0])
-                && !Board[0][2].equals("_")) {
+                && !Board[0][2].equals("")) {
             return true;
         }
 
@@ -179,7 +173,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
-                board[i][j] = "_";
+                board[i][j] = '_';
             }
         }
         roundCount = 0;
@@ -191,5 +185,21 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         player2Score = 0;
         updatePointsText();
         resetBoard();
+    }
+
+    public int getRow() {
+        return row;
+    }
+
+    public void setRow(int row) {
+        this.row = row;
+    }
+
+    public int getCol() {
+        return col;
+    }
+
+    public void setCol(int col) {
+        this.col = col;
     }
 }
