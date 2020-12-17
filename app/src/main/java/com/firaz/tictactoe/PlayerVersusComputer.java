@@ -72,8 +72,8 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         }
 
         String buttonID = getResources().getResourceEntryName(v.getId()); //button_ij
-        int pointerOne = Integer.parseInt(buttonID.substring(7, buttonID.length()-1)); //dapat nilai i
-        int pointerTwo = Integer.parseInt(buttonID.substring(buttonID.length()-1)); //dapat nilai j
+        int pointerOne = Character.getNumericValue(buttonID.charAt(buttonID.length()-2)); //dapat nilai i
+        int pointerTwo = Character.getNumericValue(buttonID.charAt(buttonID.length()-1)); //dapat nilai j
 
         if (player1Turn) {
             ((Button) v).setText("x");
@@ -82,7 +82,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
             ((Button) v).setText("o");
             board[pointerOne][pointerTwo] = 'o';
             minimax.setBoard(board);
-            tvAI.setText(getRow() +"R"+" "+ getCol() +"C");
+            tvAI.setText(minimax.bestMoveRow +"R"+" "+ minimax.bestMoveCol +"C");
             //mungkin nanti disini
             //tambahin fungsi evaluasi
         }

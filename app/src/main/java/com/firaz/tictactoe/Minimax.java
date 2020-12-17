@@ -2,6 +2,9 @@ package com.firaz.tictactoe;
 
 class Minimax {
 
+    public static int bestMoveRow = 0;
+    public static int bestMoveCol = 0;
+
     static class Move {
         int row, col;
     }
@@ -185,6 +188,8 @@ class Minimax {
                 }
             }
         }
+        bestMoveRow = bestMove.row;
+        bestMoveCol = bestMove.col;
         return bestMove;
     }
 
