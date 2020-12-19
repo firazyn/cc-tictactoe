@@ -188,8 +188,6 @@ class Minimax {
                 }
             }
         }
-        bestMoveRow = bestMove.row;
-        bestMoveCol = bestMove.col;
         return bestMove;
     }
 
@@ -197,9 +195,8 @@ class Minimax {
         this.board = Board;
         Move bestMove = findBestMove(board);
 
-        PlayerVersusComputer playerVersusComputer = new PlayerVersusComputer();
-        playerVersusComputer.setRow(bestMove.row);
-        playerVersusComputer.setCol(bestMove.col);
+        bestMoveRow = bestMove.row;
+        bestMoveCol = bestMove.col;
     }
 
 //    public static void main(String[] args)

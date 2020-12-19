@@ -1,12 +1,14 @@
 package com.firaz.tictactoe;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     private TextView tvPlayer1Score, tvPlayer2Score;
     private TextView tvPlayer1Name, tvPlayer2Name;
     private Button[][] buttons = new Button[3][3];
+    private Button btnDismissDialog;
+    private ImageView imgWinner;
 
     private String player1Name = "John";
     private String player2Name = "Jane";
@@ -140,22 +144,22 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
     private void player1Wins() {
         player1Score++;
-        Toast.makeText(this, "Player 1 Wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
+        showPlayer1WinnerDialog();
         resetBoard();
     }
 
     private void player2Wins() {
         player2Score++;
-        Toast.makeText(this, "Player 2 wins!", Toast.LENGTH_SHORT).show();
         updatePointsText();
+        showPlayer2WinnerDialog();
         resetBoard();
     }
 
 
 
     private void draw() {
-        Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
+        showDrawDialog();
         resetBoard();
     }
 
@@ -179,5 +183,71 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         player2Score = 0;
         updatePointsText();
         resetBoard();
+    }
+
+    private void showPlayer1WinnerDialog() {
+        final Dialog player1WinnerDialog = new Dialog(PlayerVersusPlayer.this);
+        player1WinnerDialog.setContentView(R.layout.dialog_winner);
+        player1WinnerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        player1WinnerDialog.setCancelable(false);
+
+        imgWinner = player1WinnerDialog.findViewById(R.id.winner_img);
+        TextView tvPlayer1Winner = player1WinnerDialog.findViewById(R.id.won_text);
+        btnDismissDialog = player1WinnerDialog.findViewById(R.id.dismiss_dialog);
+        imgWinner.setImageResource(R.drawable.ic_cross);
+        tvPlayer1Winner.setText(player1Name + " won the round");
+
+        btnDismissDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player1WinnerDialog.dismiss();
+            }
+        });
+
+        player1WinnerDialog.show();
+    }
+
+    private void showPlayer2WinnerDialog() {
+        final Dialog player2WinnerDialog = new Dialog(PlayerVersusPlayer.this);
+        player2WinnerDialog.setContentView(R.layout.dialog_winner);
+        player2WinnerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        player2WinnerDialog.setCancelable(false);
+
+        imgWinner = player2WinnerDialog.findViewById(R.id.winner_img);
+        TextView tvPlayer2Winner = player2WinnerDialog.findViewById(R.id.won_text);
+        btnDismissDialog = player2WinnerDialog.findViewById(R.id.dismiss_dialog);
+        imgWinner.setImageResource(R.drawable.ic_circle);
+        tvPlayer2Winner.setText(player2Name + " won the round");
+
+        btnDismissDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                player2WinnerDialog.dismiss();
+            }
+        });
+
+        player2WinnerDialog.show();
+    }
+
+    private void showDrawDialog() {
+        final Dialog drawDialog = new Dialog(PlayerVersusPlayer.this);
+        drawDialog.setContentView(R.layout.dialog_winner);
+        drawDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        drawDialog.setCancelable(false);
+
+        imgWinner = drawDialog.findViewById(R.id.winner_img);
+        TextView tvDraw = drawDialog.findViewById(R.id.won_text);
+        btnDismissDialog = drawDialog.findViewById(R.id.dismiss_dialog);
+        imgWinner.setImageResource(R.drawable.ic_circlecross);
+        tvDraw.setText("Round Draw");
+
+        btnDismissDialog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                drawDialog.dismiss();
+            }
+        });
+
+        drawDialog.show();
     }
 }

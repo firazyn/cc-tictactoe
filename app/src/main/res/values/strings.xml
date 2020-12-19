@@ -3,4 +3,6 @@
     <string name="reset">Reset</string>
     <string name="default_score">0</string>
     <string name="new_game">New Game</string>
+    <string name="won_text">won the round!</string>
+    <string name="dismiss_dialog">@android:string/ok</string>
 </resources>
