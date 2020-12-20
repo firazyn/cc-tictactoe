@@ -5,4 +5,5 @@
     <string name="new_game">New Game</string>
     <string name="won_text">won the round!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
+    <string name="turn_status">First turn:</string>
 </resources>

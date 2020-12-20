@@ -15,13 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClickListener {
 
-    private boolean player1Turn = true;
+    private boolean player1Turn = true, nextTurn;
 
     private int roundCount;
     private int player1Score, player2Score;
 
     private TextView tvPlayer1Score, tvPlayer2Score;
-    private TextView tvPlayer1Name, tvPlayer2Name;
+    private TextView tvPlayer1Name, tvPlayer2Name, tvPlayerNameTurn;
     private Button[][] buttons = new Button[3][3];
     private Button btnDismissDialog;
     private ImageView imgWinner;
@@ -42,7 +42,10 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         tvPlayer2Score = findViewById(R.id.score_p2);
         tvPlayer1Name = findViewById(R.id.name_p1);
         tvPlayer2Name = findViewById(R.id.name_p2);
+        tvPlayerNameTurn = findViewById(R.id.turn_player);
+        TextView tvStatus = findViewById(R.id.turn_status);
 
+        tvPlayerNameTurn.setText(player1Name);
         tvPlayer1Name.setText(player1Name);
         tvPlayer2Name.setText(player2Name);
 
@@ -86,6 +89,13 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
             ((Button) v).setText("o");
         }
         ((Button) v).setTextColor(Color.parseColor("#000000"));
+
+        if (roundCount == 0 && player1Turn) {
+            nextTurn = false;
+        }
+        if (roundCount == 0 && !player1Turn) {
+            nextTurn = true;
+        }
 
         roundCount++;
 
@@ -175,7 +185,13 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
             }
         }
         roundCount = 0;
-        player1Turn = true;
+        player1Turn = nextTurn;
+
+        if (player1Turn) {
+            tvPlayerNameTurn.setText(player1Name);
+        } else {
+            tvPlayerNameTurn.setText(player2Name);
+        }
     }
 
     private void ResetGame() {

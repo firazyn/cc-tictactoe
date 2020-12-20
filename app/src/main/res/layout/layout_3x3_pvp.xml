@@ -77,6 +77,31 @@
             app:layout_constraintRight_toRightOf="@id/score_p1"
             app:layout_constraintTop_toTopOf="@id/score_p1"
             app:srcCompat="@drawable/ic_cross____white"/>
+
+        <TextView
+            android:id="@+id/turn_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/colorText"
+            android:text="@string/turn_status"
+            android:textSize="15sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="@+id/score_p1"
+            app:layout_constraintRight_toLeftOf="@id/circle_white"
+            app:layout_constraintTop_toBottomOf="@id/circle_white"/>
+
+        <TextView
+            android:id="@+id/turn_player"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/colorText"
+            android:textSize="15sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toRightOf="@+id/turn_status"
+            app:layout_constraintTop_toBottomOf="@id/circle_white"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <LinearLayout
