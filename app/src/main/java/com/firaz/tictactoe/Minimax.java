@@ -1,5 +1,6 @@
 package com.firaz.tictactoe;
 
+//Provided from https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
 class Minimax {
 
     public static int bestMoveRow = 0;
@@ -198,17 +199,4 @@ class Minimax {
         bestMoveRow = bestMove.row;
         bestMoveCol = bestMove.col;
     }
-
-//    public static void main(String[] args)
-//    {
-//        char board[][] = {{ 'x', 'o', 'o' },
-//                          { '', 'x', '' },
-//                          { '_', '_', '_' }};
-//
-//        Move bestMove = findBestMove(board);
-//
-//        System.out.printf("The Optimal Move is :\n");
-//        System.out.printf("ROW: %d COL: %d\n\n",
-//                bestMove.row, bestMove.col );
-//    }
 }

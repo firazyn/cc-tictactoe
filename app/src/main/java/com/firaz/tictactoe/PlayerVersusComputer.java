@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.Random;
 
 public class PlayerVersusComputer extends AppCompatActivity implements View.OnClickListener {
     public Minimax minimax = new Minimax();
@@ -83,15 +84,31 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         int pointerTwo = Character.getNumericValue(buttonID.charAt(buttonID.length()-1)); //dapat nilai j
 
         if (player1Turn) {
-            ((Button) v).setText("x");
-            board[pointerOne][pointerTwo] = 'x';
+            if (roundCount == 0) {
+                Random random = new Random();
+                int randPointerOne = random.nextInt(3);
+                int randPointerTwo = random.nextInt(3);
+                buttons[randPointerOne][randPointerTwo].performClick();
+                buttons[randPointerOne][randPointerTwo].setText("x");
+                board[randPointerOne][randPointerTwo] = 'x';
+                //buttons[randPointerOne][randPointerTwo].setPressed(true);
+
+                //NOTE:
+                //Mungkin bisa dijadiin method >> pressButton(int pressPointerOne, int pressPointerTwo)
+                //nanti ambil variabel dari rand dan minimax.bestMove nya
+
+            } else {
+                minimax.setBoard(board);
+                buttons[minimax.bestMoveRow][minimax.bestMoveCol].performClick();
+                buttons[minimax.bestMoveRow][minimax.bestMoveCol].setText("x");
+                board[minimax.bestMoveRow][minimax.bestMoveCol] = 'x';
+                //buttons[minimax.bestMoveRow][minimax.bestMoveCol].setPressed(true);
+            }
+            tvAI.setText(minimax.bestMoveRow + "R" + " " + minimax.bestMoveCol + "C");
+            //masih blm muncul di tombol secara otomatis
         } else {
             ((Button) v).setText("o");
             board[pointerOne][pointerTwo] = 'o';
-            minimax.setBoard(board);
-            tvAI.setText(minimax.bestMoveRow +"R"+" "+ minimax.bestMoveCol +"C");
-            //mungkin nanti disini
-            //tambahin fungsi evaluasi
         }
         ((Button) v).setTextColor(Color.parseColor("#000000"));
 
@@ -112,8 +129,6 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
             }
         } else if (roundCount == 9) {
             draw();
-            //mungkin nanti disini
-            //tambahin var isMoveLeft = false;
         } else {
             player1Turn = !player1Turn;
         }

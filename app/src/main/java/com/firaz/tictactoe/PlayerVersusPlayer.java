@@ -166,8 +166,6 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         resetBoard();
     }
 
-
-
     private void draw() {
         showDrawDialog();
         resetBoard();
