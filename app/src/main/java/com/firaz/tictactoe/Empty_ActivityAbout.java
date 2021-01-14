@@ -11,5 +11,4 @@ public class Empty_ActivityAbout extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empty__about);
     }
-    //publicccc
 }
