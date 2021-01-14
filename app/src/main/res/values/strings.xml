@@ -3,7 +3,7 @@
     <string name="reset">Reset</string>
     <string name="default_score">0</string>
     <string name="new_game">New Game</string>
-    <string name="won_text">Won The Round!</string>
+    <string name="won_text">won the round!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
     <string name="turn_status">First turn:</string>
     <string name="main_menu">Main Menu</string>
@@ -11,8 +11,15 @@
     <string name="how_to_play">How To Play</string>
     <string name="about">About</string>
     <string name="tq">Thanks</string>
-    <string name="pvsc">Player Vs Komputer</string>
-    <string name="pt">Project Team :</string>
+    <string name="pvsc">Player Vs Computer</string>
+    <string name="pvsp">Player Vs Player</string>
+    <string name="give_a_name">Give a Name</string>
+    <string name="player_one_name">Your Name</string>
+    <string name="player_two_name">Friend\'s Name</string>
+    <string name="cpu_pvc">Computer</string>
+    <string name="you_pvc">You</string>
+    <string name="name_error">Name cannot be empty</string>
+    <string name="pt">Project Team</string>
     <string name="changeLang">Change Language</string>
     <string name="frz">Firaztori Yusuf Nurwanto - Project Leader, Developer </string>
     <string name="ido">Ridho Alrafi - Main Developer, Designer</string>

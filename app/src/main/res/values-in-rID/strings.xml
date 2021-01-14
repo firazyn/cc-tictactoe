@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Circlecross</string>
-    <string name="reset">Ulang</string>
+    <string name="reset">Ulangi</string>
     <string name="default_score">0</string>
     <string name="new_game">Permainan Baru</string>
-    <string name="won_text">Menang!</string>
+    <string name="won_text">menang!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
     <string name="turn_status">Giliran Pertama:</string>
     <string name="main_menu">Menu Utama</string>
-    <string name="play_game">Bermain</string>
+    <string name="play_game">Main</string>
     <string name="how_to_play">Cara Bermain</string>
     <string name="about">Tentang</string>
     <string name="tq">Terima Kasih</string>
-    <string name="pvsc">Player Vs Komputer</string>
-    <string name="pt">Tim Proyek :</string>
-    <string name="changeLang">Tukar Bahasa</string>
+    <string name="pvsc">dengan Komputer</string>
+    <string name="pt">Tim Pengembang</string>
+    <string name="changeLang">Ganti Bahasa</string>
     <string name="frz">Firaztori Yusuf Nurwanto - Pemimpin Proyek, Pengembang</string>
     <string name="ido">Ridho Alrafi - Pengembang Utama, Desainer</string>
     <string name="els">Elshinta Milenia - Desainer Utama, Pengembang</string>
@@ -26,4 +26,11 @@
         Pemain yang pertama kali menggambar tiga simbol berturut-turut, baik secara horizontal, vertikal, atau diagonal, menjadi pemenang permainan.</string>
     <string name="howtoplay4">4. Terus berlatih. Bertentangan dengan kepercayaan umum, tic-tac-toe tidak sepenuhnya permainan kesempatan.
         Ada beberapa strategi yang dapat membantu Anda mengoptimalkan kemampuan dan menjadikan Anda pemain tic-tac-toe ahli.</string>
+    <string name="give_a_name">Berikan Nama</string>
+    <string name="player_one_name">Nama Anda</string>
+    <string name="player_two_name">Nama Teman Anda</string>
+    <string name="cpu_pvc">Komputer</string>
+    <string name="you_pvc">Anda</string>
+    <string name="name_error">Nama tidak boleh kosong</string>
+    <string name="pvsp">dengan Teman</string>
 </resources>

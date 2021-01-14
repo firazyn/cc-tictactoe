@@ -26,8 +26,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     private Button btnDismissDialog;
     private ImageView imgWinner;
 
-    private String player1Name = "John";
-    private String player2Name = "Jane";
+    public static String PLAYER_ONE_NAME = "PLAYER_ONE_NAME";
+    public static String PLAYER_TWO_NAME = "PLAYER_TWO_NAME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +44,9 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         tvPlayer2Name = findViewById(R.id.name_p2);
         tvPlayerNameTurn = findViewById(R.id.turn_player);
         TextView tvStatus = findViewById(R.id.turn_status);
+
+        String player1Name = getIntent().getStringExtra(PLAYER_ONE_NAME);
+        String player2Name = getIntent().getStringExtra(PLAYER_TWO_NAME);
 
         tvPlayerNameTurn.setText(player1Name);
         tvPlayer1Name.setText(player1Name);
@@ -178,6 +181,9 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     }
 
     private void resetBoard() {
+        String player1Name = getIntent().getStringExtra(PLAYER_ONE_NAME);
+        String player2Name = getIntent().getStringExtra(PLAYER_TWO_NAME);
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
@@ -201,16 +207,19 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     }
 
     private void showPlayer1WinnerDialog() {
+        String player1Name = getIntent().getStringExtra(PLAYER_ONE_NAME);
+
         final Dialog player1WinnerDialog = new Dialog(PlayerVersusPlayer.this);
         player1WinnerDialog.setContentView(R.layout.dialog_winner);
         player1WinnerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         player1WinnerDialog.setCancelable(false);
 
         imgWinner = player1WinnerDialog.findViewById(R.id.winner_img);
-        TextView tvPlayer1Winner = player1WinnerDialog.findViewById(R.id.won_text);
+        TextView tvPlayerName= player1WinnerDialog.findViewById(R.id.player_name);
+        TextView tvPlayerWon = player1WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player1WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_cross);
-        tvPlayer1Winner.setText(player1Name + " Won The Round");
+        tvPlayerName.setText(player1Name);
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -223,16 +232,19 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     }
 
     private void showPlayer2WinnerDialog() {
+        String player2Name = getIntent().getStringExtra(PLAYER_TWO_NAME);
+
         final Dialog player2WinnerDialog = new Dialog(PlayerVersusPlayer.this);
         player2WinnerDialog.setContentView(R.layout.dialog_winner);
         player2WinnerDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         player2WinnerDialog.setCancelable(false);
 
         imgWinner = player2WinnerDialog.findViewById(R.id.winner_img);
-        TextView tvPlayer2Winner = player2WinnerDialog.findViewById(R.id.won_text);
+        TextView tvPlayerName= player2WinnerDialog.findViewById(R.id.player_name);
+        TextView tvPlayerWon = player2WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player2WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_circle);
-        tvPlayer2Winner.setText(player2Name + " Won The Round");
+        tvPlayerName.setText(player2Name);
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override

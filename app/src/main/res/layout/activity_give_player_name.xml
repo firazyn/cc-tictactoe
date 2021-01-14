@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GivePlayerName"
+    android:background="@color/colorPrimary">
+
+    <TextView
+        android:id="@+id/title_give_a_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorText"
+        android:textSize="25sp"
+        android:text="@string/give_a_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/title_p1_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorText"
+        android:textSize="25sp"
+        android:text="@string/player_one_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_give_a_name"/>
+
+    <EditText
+        android:id="@+id/edit_p1_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_ver1"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorText"
+        android:hint="@string/player_one_name"
+        android:inputType="textCapSentences|textAutoCorrect"
+        android:lines="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_p1_name"/>
+
+    <TextView
+        android:id="@+id/title_p2_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorText"
+        android:textSize="25sp"
+        android:text="@string/player_two_name"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_p1_name"/>
+
+    <EditText
+        android:id="@+id/edit_p2_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/btn_ver1"
+        android:fontFamily="@font/montserrat"
+        android:textColor="@color/colorText"
+        android:hint="@string/player_two_name"
+        android:inputType="textCapSentences|textAutoCorrect"
+        android:lines="1"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_p2_name"/>
+
+    <Button
+        android:id="@+id/play_game"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_ver1"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/play_game"
+        android:textAllCaps="false"
+        android:textColor="@color/colorText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_p2_name"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
