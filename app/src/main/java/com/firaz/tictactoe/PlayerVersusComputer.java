@@ -228,10 +228,11 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         player1WinnerDialog.setCancelable(false);
 
         imgWinner = player1WinnerDialog.findViewById(R.id.winner_img);
-        TextView tvPlayer1Winner = player1WinnerDialog.findViewById(R.id.won_text);
+        TextView tvPlayerName= player1WinnerDialog.findViewById(R.id.player_name);
+        TextView tvPlayerWon = player1WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player1WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_cross);
-        tvPlayer1Winner.setText(player1Name + " won the round");
+        tvPlayerName.setText(player1Name);
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -250,10 +251,11 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         player2WinnerDialog.setCancelable(false);
 
         imgWinner = player2WinnerDialog.findViewById(R.id.winner_img);
-        TextView tvPlayer2Winner = player2WinnerDialog.findViewById(R.id.won_text);
+        TextView tvPlayerName= player2WinnerDialog.findViewById(R.id.player_name);
+        TextView tvPlayerWon = player2WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player2WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_circle);
-        tvPlayer2Winner.setText(player2Name + " won the round");
+        tvPlayerName.setText(player2Name);
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
