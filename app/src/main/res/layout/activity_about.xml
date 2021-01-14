@@ -4,8 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_launcher_foreground"
-    android:orientation="vertical">
+    android:background="@color/colorPrimary"
+    android:orientation="horizontal"
+    tools:context=".About">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -15,28 +16,19 @@
             android:id="@+id/satu"
             android:background="#000"
             android:layout_width="match_parent"
-            android:layout_height="405dp">
+            android:layout_height="500dp">
             <LinearLayout
                 android:id="@+id/biru"
                 android:background="#000"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="200dp"
                 android:orientation="vertical">
                 <ImageView
-                    android:layout_marginTop="45dp"
+                    android:layout_marginTop="20dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_width="150dp"
                     android:layout_height="150dp"
                     android:src="@drawable/ic_circlecross_white"/>//ganti tulisan circle fource
-                <TextView
-                    android:layout_marginTop="10dp"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Circlecross"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    android:textSize="21sp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -50,95 +42,90 @@
                 android:layout_marginTop="20dp">
                 <LinearLayout
                     android:orientation="horizontal"
-                    android:paddingLeft="25dp"
+                    android:paddingLeft="108dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
-                    <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background=""
-                        />
                     <TextView
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:paddingLeft="20dp"
-                        android:text="Project Team : :"
+                        android:paddingLeft="32dp"
+                        android:text="@string/pt"
                         android:textColor="#fff"/>
 
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginTop="25dp"
                     android:orientation="horizontal"
-                    android:paddingLeft="25dp"
+
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background=""
-                        />
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/firaz"/>
                     <TextView
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingLeft="20dp"
-                        android:text="Firaztori Yusuf Nurwanto - Project Leader, Developer "
+                        android:text="@string/frz"
                         android:textColor="#fff"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginTop="25dp"
                     android:orientation="horizontal"
-                    android:paddingLeft="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background=""
-                        />
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/ridho"/>
                     <TextView
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/ido"
                         android:paddingLeft="20dp"
-                        android:text="Ridho Alrafi - Main Developer, Designer"
                         android:textColor="#fff"/>
                 </LinearLayout>
                 <LinearLayout
                     android:layout_marginTop="25dp"
                     android:orientation="horizontal"
-                    android:paddingLeft="25dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <ImageView
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:background=""
-                        />
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:background="@drawable/elshinta"/>
                     <TextView
                         android:textStyle="bold"
                         android:layout_gravity="center_vertical"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:text="@string/els"
                         android:paddingLeft="20dp"
-                        android:text="Elshinta Milenia - Main Designer, Developer"
                         android:textColor="#fff"/>
                 </LinearLayout>
             </LinearLayout>
             <Button
                 android:layout_below="@+id/mantab"
-                android:textColor="#fff"
+                android:textColor="@color/colorText"
+                android:textSize="20sp"
                 android:layout_centerHorizontal="true"
-                android:background=""
+                android:background="@drawable/btn_ver1"
                 android:layout_marginTop="35dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
-                android:text="Follow Me"/>
+                android:fontFamily="@font/montserrat"
+                android:text="@string/tq"/>
         </RelativeLayout>
 
     </ScrollView>

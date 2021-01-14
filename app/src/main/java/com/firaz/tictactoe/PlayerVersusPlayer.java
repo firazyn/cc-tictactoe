@@ -75,6 +75,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
                 startActivity(pvc);
             }
         });
+
     }
 
     @Override
@@ -209,7 +210,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         TextView tvPlayer1Winner = player1WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player1WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_cross);
-        tvPlayer1Winner.setText(player1Name + " won the round");
+        tvPlayer1Winner.setText(player1Name + " Won The Round");
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -231,7 +232,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         TextView tvPlayer2Winner = player2WinnerDialog.findViewById(R.id.won_text);
         btnDismissDialog = player2WinnerDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_circle);
-        tvPlayer2Winner.setText(player2Name + " won the round");
+        tvPlayer2Winner.setText(player2Name + " Won The Round");
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -264,4 +265,6 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
         drawDialog.show();
     }
+
+
 }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Circlecross</string>
+    <string name="reset">Ulang</string>
+    <string name="default_score">0</string>
+    <string name="new_game">Permainan Baru</string>
+    <string name="won_text">Menang!</string>
+    <string name="dismiss_dialog">@android:string/ok</string>
+    <string name="turn_status">Giliran Pertama:</string>
+    <string name="main_menu">Menu Utama</string>
+    <string name="play_game">Bermain</string>
+    <string name="how_to_play">Cara Bermain</string>
+    <string name="about">Tentang</string>
+    <string name="tq">Terima Kasih</string>
+    <string name="pvsc">Player Vs Komputer</string>
+    <string name="pt">Tim Proyek :</string>
+    <string name="changeLang">Tukar Bahasa</string>
+    <string name="frz">Firaztori Yusuf Nurwanto - Pemimpin Proyek, Pengembang</string>
+    <string name="ido">Ridho Alrafi - Pengembang Utama, Desainer</string>
+    <string name="els">Elshinta Milenia - Desainer Utama, Pengembang</string>
+    <string name="howtoplay1">1. Biarkan pemain pertama bermain terlebih dahulu. Meskipun secara tradisional, pemain pertama bermain dengan "X", Anda dapat mengizinkan pemain pertama untuk memutuskan apakah dia ingin bermain "X" atau "O".
+        Simbol-simbol ini akan digambar di atas meja, dalam upaya untuk menggambar tiga simbol yang sama berturut-turut.</string>
+    <string name="howtoplay2">2. Selanjutnya, giliran pemain kedua yang bermain. Setelah pemain pertama menggambar simbol, pemain kedua harus menggambar simbol, yang akan berbeda dari simbol yang digunakan oleh pemain pertama.
+        Pemain kedua dapat mencoba memblokir pemain pertama dari membuat tiga simbol berturut-turut, atau fokus pada pembuatan tiga simbol dalam satu baris sendiri.</string>
+    <string name="howtoplay3">3. Terus bergiliran menggambar setiap simbol sampai salah satu pemain telah menggambar tiga simbol berturut-turut atau sampai tidak ada pemain yang bisa menang.
+        Pemain yang pertama kali menggambar tiga simbol berturut-turut, baik secara horizontal, vertikal, atau diagonal, menjadi pemenang permainan.</string>
+    <string name="howtoplay4">4. Terus berlatih. Bertentangan dengan kepercayaan umum, tic-tac-toe tidak sepenuhnya permainan kesempatan.
+        Ada beberapa strategi yang dapat membantu Anda mengoptimalkan kemampuan dan menjadikan Anda pemain tic-tac-toe ahli.</string>
+</resources>

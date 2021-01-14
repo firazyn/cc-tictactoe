@@ -3,7 +3,26 @@
     <string name="reset">Reset</string>
     <string name="default_score">0</string>
     <string name="new_game">New Game</string>
-    <string name="won_text">won the round!</string>
+    <string name="won_text">Won The Round!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
     <string name="turn_status">First turn:</string>
+    <string name="main_menu">Main Menu</string>
+    <string name="play_game">Play Game</string>
+    <string name="how_to_play">How To Play</string>
+    <string name="about">About</string>
+    <string name="tq">Thanks</string>
+    <string name="pvsc">Player Vs Komputer</string>
+    <string name="pt">Project Team :</string>
+    <string name="changeLang">Change Language</string>
+    <string name="frz">Firaztori Yusuf Nurwanto - Project Leader, Developer </string>
+    <string name="ido">Ridho Alrafi - Main Developer, Designer</string>
+    <string name="els">Elshinta Milenia - Main Designer, Developer</string>
+    <string name="howtoplay1">1. Let the first player play first. Although traditionally, the first player plays with an "X", you can allow the first player to decide if he wants to play "X" or "O".
+        These symbols will be drawn on the table, in an attempt to draw the same three symbols in a row.
+    </string>
+    <string name="howtoplay2">2. Next, its the second players turn to play. After the first player draws a symbol, the second player must draw the symbol, which will be different from the symbol used by the first player.
+        The second player can try to block the first player from creating three symbols in a row, or focus on creating three symbols in one row of his own.</string>
+    <string name="howtoplay3">3. Keep taking turns drawing each symbol until one of the players has drawn three symbols in a row or until no player can win.
+        The player who first draws the three symbols in a row, either horizontally, vertically, or diagonally, becomes the winner of the game.</string>
+    <string name="howtoplay4">4. Keep practicing. Contrary to common belief, tic-tac-toe is not entirely a game of chance. There are several strategies that can help you optimize your abilities and make you an expert tic-tac-toe player.</string>
 </resources>
