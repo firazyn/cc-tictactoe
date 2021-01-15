@@ -8,14 +8,12 @@
     android:background="@color/colorPrimary"
     tools:context=".MainMenu">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/main_menu"
-        android:textColor="@color/colorText"
-        android:fontFamily="@font/montserrat"
-        android:textSize="24sp"
-        android:layout_gravity="center"/>
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/ic_circlecross_white"/>
 
     <Button
         android:layout_width="200dp"
@@ -42,6 +40,18 @@
         android:onClick="htp"/>
 
     <Button
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="@string/scoreboard"
+        android:fontFamily="@font/montserrat"
+        android:background="@drawable/btn_ver1"
+        android:textColor="@color/colorText"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="scoreboard"/>
+
+    <Button
         android:id="@+id/changeMyLang"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -64,4 +74,5 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:onClick="about"/>
+
 </LinearLayout>

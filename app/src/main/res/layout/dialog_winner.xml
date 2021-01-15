@@ -39,8 +39,6 @@
             android:textSize="16sp"
             android:text="@string/won_text"/>
 
-        <!-- TODO: Make @string/won_text and playerName separated -->
-
         <Button
             android:id="@+id/dismiss_dialog"
             android:layout_width="wrap_content"

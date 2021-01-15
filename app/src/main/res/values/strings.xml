@@ -4,9 +4,10 @@
     <string name="default_score">0</string>
     <string name="new_game">New Game</string>
     <string name="won_text">won the round!</string>
+    <string name="scoreboard">Scoreboard</string>
+    <string name="draw_round_text">Round Draw!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
     <string name="turn_status">First turn:</string>
-    <string name="main_menu">Main Menu</string>
     <string name="play_game">Play Game</string>
     <string name="how_to_play">How To Play</string>
     <string name="about">About</string>

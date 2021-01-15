@@ -1,6 +1,7 @@
 package com.firaz.tictactoe;
 
 import android.app.Dialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -63,10 +64,18 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         }
 
         Button buttonReset = findViewById(R.id.button_reset);
+        Button buttonNewGame = findViewById(R.id.button_new);
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ResetGame();
+            }
+        });
+        buttonNewGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent pg = new Intent(PlayerVersusComputer.this, PlayGame.class);
+                startActivity(pg);
             }
         });
     }
@@ -87,7 +96,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
                 Random random = new Random();
                 int randPointerOne = random.nextInt(3);
                 int randPointerTwo = random.nextInt(3);
-                buttons[randPointerOne][randPointerTwo].performClick();
+//                buttons[randPointerOne][randPointerTwo].performClick();
                 buttons[randPointerOne][randPointerTwo].setText("x");
                 board[randPointerOne][randPointerTwo] = 'x';
                 //buttons[randPointerOne][randPointerTwo].setPressed(true);
@@ -98,7 +107,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
 
             } else {
                 minimax.setBoard(board);
-                buttons[minimax.bestMoveRow][minimax.bestMoveCol].performClick();
+//                buttons[minimax.bestMoveRow][minimax.bestMoveCol].performClick();
                 buttons[minimax.bestMoveRow][minimax.bestMoveCol].setText("x");
                 board[minimax.bestMoveRow][minimax.bestMoveCol] = 'x';
                 //buttons[minimax.bestMoveRow][minimax.bestMoveCol].setPressed(true);
@@ -277,7 +286,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
         TextView tvDraw = drawDialog.findViewById(R.id.won_text);
         btnDismissDialog = drawDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_circlecross);
-        tvDraw.setText("Round Draw");
+        tvDraw.setText(getText(R.string.draw_round_text));
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override

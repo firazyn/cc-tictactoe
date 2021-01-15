@@ -1,10 +1,13 @@
 package com.firaz.tictactoe;
 
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -14,6 +17,8 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClickListener {
+
+    DataHelper dbHelper;
 
     private boolean player1Turn = true, nextTurn;
 
@@ -26,8 +31,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     private Button btnDismissDialog;
     private ImageView imgWinner;
 
-    public static String PLAYER_ONE_NAME = "PLAYER_ONE_NAME";
-    public static String PLAYER_TWO_NAME = "PLAYER_TWO_NAME";
+    public static String PLAYER_ONE_NAME = "player_one_name";
+    public static String PLAYER_TWO_NAME = "player_two_name";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_main);
 
+        dbHelper = new DataHelper(this);
         tvPlayer1Score = findViewById(R.id.score_p1);
         tvPlayer2Score = findViewById(R.id.score_p2);
         tvPlayer1Name = findViewById(R.id.name_p1);
@@ -74,8 +80,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         buttonNewGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent pvc = new Intent(PlayerVersusPlayer.this, PlayerVersusComputer.class);
-                startActivity(pvc);
+                Intent pg = new Intent(PlayerVersusPlayer.this, PlayGame.class);
+                startActivity(pg);
             }
         });
 
@@ -158,6 +164,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
     private void player1Wins() {
         player1Score++;
+        String player1Name = getIntent().getStringExtra(PLAYER_ONE_NAME);
+        updateScoreToDatabase(player1Score, player1Name);
         updatePointsText();
         showPlayer1WinnerDialog();
         resetBoard();
@@ -165,6 +173,8 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
     private void player2Wins() {
         player2Score++;
+        String player2Name = getIntent().getStringExtra(PLAYER_TWO_NAME);
+        updateScoreToDatabase(player2Score, player2Name);
         updatePointsText();
         showPlayer2WinnerDialog();
         resetBoard();
@@ -178,6 +188,27 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
     private void updatePointsText() {
         tvPlayer1Score.setText("" +player1Score);
         tvPlayer2Score.setText("" +player2Score);
+    }
+
+    private void updateScoreToDatabase(int playerScore, String playerName) {
+        try {
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
+            String[] selectionArgs = {playerName};
+
+            contentValues.put("score", playerScore);
+            db.update("scoreboard", contentValues, "player_name = ?", selectionArgs);
+
+        } catch (Exception e) {
+            Log.e("tag", "error "+e);
+        }
+
+//        SQLiteDatabase db = dbHelper.getWritableDatabase();
+//        ContentValues contentValues = new ContentValues();
+//        String[] selectionArgs = {playerName};
+//
+//        contentValues.put("score", playerScore);
+//        db.update("scoreboard", contentValues, "player_name = ?", selectionArgs);
     }
 
     private void resetBoard() {
@@ -266,7 +297,7 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
         TextView tvDraw = drawDialog.findViewById(R.id.won_text);
         btnDismissDialog = drawDialog.findViewById(R.id.dismiss_dialog);
         imgWinner.setImageResource(R.drawable.ic_circlecross);
-        tvDraw.setText("Round Draw");
+        tvDraw.setText(getText(R.string.draw_round_text));
 
         btnDismissDialog.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -277,6 +308,4 @@ public class PlayerVersusPlayer extends AppCompatActivity implements View.OnClic
 
         drawDialog.show();
     }
-
-
 }

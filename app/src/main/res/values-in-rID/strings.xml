@@ -5,9 +5,9 @@
     <string name="default_score">0</string>
     <string name="new_game">Permainan Baru</string>
     <string name="won_text">menang!</string>
+    <string name="draw_round_text">Seri!</string>
     <string name="dismiss_dialog">@android:string/ok</string>
     <string name="turn_status">Giliran Pertama:</string>
-    <string name="main_menu">Menu Utama</string>
     <string name="play_game">Main</string>
     <string name="how_to_play">Cara Bermain</string>
     <string name="about">Tentang</string>
@@ -33,4 +33,5 @@
     <string name="you_pvc">Anda</string>
     <string name="name_error">Nama tidak boleh kosong</string>
     <string name="pvsp">dengan Teman</string>
+    <string name="scoreboard">Papan Skor</string>
 </resources>
