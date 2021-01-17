@@ -1,7 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#000000</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="colorText">#FFFFFF</color>
+    <color name="colorPrimary">#4c84ff</color>
+    <color name="colorPrimaryDark">#4c84ff</color>
+
+    <color name="colorAccent">#D81B60</color>
+    <color name="white">#fff</color>
+
+    <color name="textColor">#273d52</color>
+    <color name="headerColor">#145795</color>
+
+
+    <color name="startColor">#006797</color>
+    <color name="endColor">#489855</color>
+    <color name="centerColor">#006797</color>
+    <color name="userRow">#403fc68b</color>
+
+    <color name="iconColor">#145798</color>
+
+
+    <color name="gradient_start_color">#4c84ff</color>
+    <color name="gradient_end_color">#18a3fe</color>
+
+    <color name="tab_indicator_grey">#c0c0c0</color>
+    <color name="halus">#2DC0C0C0</color>
+    <color name="intro_tittle_color">#000000</color>
+    <color name="gradient_description_color">#656565</color>
+
+    <color name="merah">#DA042F</color>
+    <color name="biru">#2196F3</color>
+    <color name="kuning">#FFEB3B</color>
+    <color name="putih">#fff</color>
+    <color name="hitam">#000000</color>
+
+    <color name="Nicegreennish">#009968</color>
+    <color name="deepblue">#3f51b5</color>
+
+
+
+    <color name="backgroundcolor">#fcfcfc</color>
+    <color name="lightgray">#ededed</color>
+    <color name="deeppurle">#e91e63</color>
+    <color name="babypink">#F48FB1</color>
+    <color name="yello">#00ACC1</color>
+    <color name="skyblue">#4DD0E1</color>
+    <color name="green">#c6ff00</color>
+    <color name="greenlight">#dce775</color>
+    <color name="colorAccentLight">#b388ff</color>
+
+
+    <color name="splashgradientstart">#efefef</color>
+    <color name="colorTittleColor">#626a9e</color>
+
+    <color name="indigo">#3f51b5</color>
+    <color name="teal">#009688</color>
+    <color name="darkdeepOrange">#e64a19</color>
+    <color name="darkGreen">#388e3c</color>
+    <color name="darkBlueGray">#455a64</color>
+    <color name="darkRed">#d32f2f</color>
+
+
+
+
+    <color name="PrimaryText">#212121</color>
+    <color name="SecondaryText">#727272</color>
+
+
+    <color name="color_1">#db4437</color>
+    <color name="color_2">#e91e63</color>
+    <color name="color_3">#ff5722</color>
+    <color name="color_4">#ef6c00</color>
+    <color name="color_5">#689f38</color>
+    <color name="color_6">#0097a7</color>
+    <color name="color_7">#4285f4</color>
+    <color name="color_8">#039be5</color>
+    <color name="color_9">#3f51b5</color>
+    <color name="color_10">#673ab7</color>
+    <color name="color_11">#757575</color>
+
+    <color name="Transparent">#00000000</color>
+    <color name="Transparent80">#80000000</color>
+
+    <color name="color1">#424549</color>
+    <color name="color2">#7e455e</color>
+    <color name="color3">#796e25</color>
+    <color name="color4">#59717c</color>
+
+
+    <color name="orangepastel">#C1FF6122</color>
+    <color name="merahpastel">#B0F50606</color>
+    <color name="birupastel">#A4065EF5</color>
+    <color name="hijaupastel">#9409B604</color>
+
+    <color name="Hijau_Gradient">#DC0FB838</color>
+    <color name="Hijau_Gradientakhir">#8F0CC007</color>
+
+
+    <color name="Merah_Gradient">#C8D10A0A</color>
+    <color name="Merah_Gradientakhir">#B2CF1515</color>
+
+    <color name="Kuning_Gradient">#D7F5DF1A</color>
+    <color name="Kuning_Gradientakhir">#B7FFE53B</color>
+
+
+
 </resources>
