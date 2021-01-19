@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Circlecross</string>
     <string name="reset">Ulangi</string>
     <string name="default_score">0</string>
     <string name="new_game">Permainan Baru</string>

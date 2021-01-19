@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SplashActivity"
-    android:background="#161719">
+    android:background="@color/colorPrimary">
 
     <RelativeLayout
         android:id="@+id/R1"
@@ -16,7 +16,7 @@
             android:id="@+id/first_line"
             android:layout_width="20dp"
             android:layout_height="50dp"
-            android:background="@color/white"
+            android:background="@color/colorText"
             android:layout_centerHorizontal="true"/>
 
         <View
@@ -32,7 +32,7 @@
             android:layout_width="20dp"
             android:layout_height="250dp"
             android:layout_marginLeft="8dp"
-            android:background="@color/white"
+            android:background="@color/colorText"
             android:layout_toRightOf="@+id/second_line"/>
 
         <View
@@ -56,14 +56,14 @@
             android:layout_width="20dp"
             android:layout_height="150dp"
             android:layout_marginLeft="8dp"
-            android:background="@color/white"
+            android:background="@color/colorText"
             android:layout_toRightOf="@+id/fifth_line"/>
 
     </RelativeLayout>
 
 
     <RelativeLayout
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="50dp"
         android:id="@+id/R2"
         android:layout_below="@+id/R1"
         android:layout_width="match_parent"
@@ -74,9 +74,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/montserrat"
-            android:text="CIRCLECROSS"
-            android:textColor="@color/white"
+            android:fontFamily="@font/library3am"
+            android:text="@string/app_name"
+            android:textColor="@color/colorText"
             android:textSize="50sp" />
     </RelativeLayout>
 
@@ -94,9 +94,10 @@
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_centerHorizontal="true"
-            android:fontFamily="@font/stilda_script"
-            android:textColor="@color/white"
-            android:textSize="28sp" />
+            android:fontFamily="@font/neoneon"
+            android:text="@string/app_dev"
+            android:textColor="@color/colorText"
+            android:textSize="50sp" />
     </RelativeLayout>
 
 

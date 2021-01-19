@@ -1,7 +1,5 @@
 package com.firaz.tictactoe;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +13,7 @@ import android.widget.TextView;
 public class SplashActivity extends Activity {
 
     private static int SPLASH_TIME_OUT=5000;
-    //animasi dan dekarasi
+
     Animation topAnimation,bottomAnimation,middleAnimation;
     View first,second,third,fourth,fifth,sixth;
     TextView a,slogan;
@@ -58,7 +56,7 @@ public class SplashActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intentmain=new Intent(SplashActivity.this,PlayGame.class);
+                Intent intentmain=new Intent(SplashActivity.this, MainMenu.class);
                 startActivity(intentmain);
                 finish();
             }
