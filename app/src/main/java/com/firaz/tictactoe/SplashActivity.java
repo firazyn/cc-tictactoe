@@ -16,7 +16,7 @@ public class SplashActivity extends Activity {
 
     Animation topAnimation,bottomAnimation,middleAnimation;
     View first,second,third,fourth,fifth,sixth;
-    TextView a,slogan;
+    TextView title,slogan;
 
 
     @Override
@@ -29,7 +29,6 @@ public class SplashActivity extends Activity {
         bottomAnimation=AnimationUtils.loadAnimation(this,R.anim.bottom_animation);
         middleAnimation=AnimationUtils.loadAnimation(this,R.anim.middle_animation);
 
-        //inisialisasi berdasarkan id
         first=findViewById(R.id.first_line);
         second=findViewById(R.id.second_line);
         third=findViewById(R.id.third_line);
@@ -37,11 +36,10 @@ public class SplashActivity extends Activity {
         fifth=findViewById(R.id.fifth_line);
         sixth=findViewById(R.id.sixth_line);
 
-        a=findViewById(R.id.a);
+        title=findViewById(R.id.title);
         slogan=findViewById(R.id.tagLine);
 
 
-        //animasi berdasarkan jenis
         first.setAnimation(topAnimation);
         second.setAnimation(topAnimation);
         third.setAnimation(topAnimation);
@@ -49,18 +47,22 @@ public class SplashActivity extends Activity {
         fifth.setAnimation(topAnimation);
         sixth.setAnimation(topAnimation);
 
-        a.setAnimation(middleAnimation);
+        title.setAnimation(middleAnimation);
         slogan.setAnimation(bottomAnimation);
 
+        Thread thread = new Thread() {
+          public void run() {
+              try {
+                  sleep(SPLASH_TIME_OUT);
+              } catch (InterruptedException e) {
+                  e.printStackTrace();
+              } finally {
+                  startActivity(new Intent(SplashActivity.this,MainMenu.class));
+                  finish();
+              }
+          }
+        };
 
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intentmain=new Intent(SplashActivity.this, MainMenu.class);
-                startActivity(intentmain);
-                finish();
-            }
-        },SPLASH_TIME_OUT);
-
+        thread.start();
     }
 }

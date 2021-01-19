@@ -1,5 +1,8 @@
 package com.firaz.tictactoe;
 
+// Code mainly provided by Florian Walther
+// https://codinginflow.com
+
 import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Color;

@@ -1,6 +1,9 @@
 package com.firaz.tictactoe;
 
-//Provided from https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
+// Code provided from GeeksForGeeks
+// https://www.geeksforgeeks.org/minimax-algorithm-in-game-theory-set-3-tic-tac-toe-ai-finding-optimal-move/
+// Some help from Sepryan Astrayesa - https://github.com/Astrayesa
+
 class Minimax {
 
     public static int bestMoveRow = 0;
@@ -13,9 +16,6 @@ class Minimax {
     static char player = 'x', opponent = 'o';
     char[][] board = new char[3][3];
 
-    // This function returns true if there are moves
-// remaining on the board. It returns false if
-// there are no moves left to play.
     static Boolean isMovesLeft(char[][] board) {
         for (int i = 0; i < 3; i++)
             for (int j = 0; j < 3; j++)
@@ -68,9 +68,6 @@ class Minimax {
         return 0;
     }
 
-    // This is the minimax function. It considers all
-// the possible ways the game can go and returns
-// the value of the board
     static int minimax(char[][] board,
                        int depth, Boolean isMax) {
         int score = evaluate(board);

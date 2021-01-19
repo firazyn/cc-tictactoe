@@ -1,5 +1,8 @@
 package com.firaz.tictactoe;
 
+// Code mainly provided by Florian Walther
+// https://codinginflow.com
+
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Intent;

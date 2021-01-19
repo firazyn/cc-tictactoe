@@ -24,7 +24,7 @@
             android:layout_width="20dp"
             android:layout_height="100dp"
             android:layout_marginLeft="8dp"
-            android:background="@color/darkRed"
+            android:background="@drawable/splash_shapes"
             android:layout_toRightOf="@+id/first_line"/>
 
         <View
@@ -40,7 +40,7 @@
             android:layout_width="20dp"
             android:layout_height="200dp"
             android:layout_marginLeft="8dp"
-            android:background="@color/darkRed"
+            android:background="@drawable/splash_shapes"
             android:layout_toRightOf="@+id/third_line"/>
 
         <View
@@ -48,7 +48,7 @@
             android:layout_width="20dp"
             android:layout_height="220dp"
             android:layout_marginLeft="8dp"
-            android:background="#1AAD68"
+            android:background="@drawable/splash_shapes"
             android:layout_toRightOf="@+id/fourth_line"/>
 
         <View
@@ -61,7 +61,6 @@
 
     </RelativeLayout>
 
-
     <RelativeLayout
         android:layout_marginTop="50dp"
         android:id="@+id/R2"
@@ -70,7 +69,7 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/a"
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -99,7 +98,5 @@
             android:textColor="@color/colorText"
             android:textSize="50sp" />
     </RelativeLayout>
-
-
 
 </RelativeLayout>
