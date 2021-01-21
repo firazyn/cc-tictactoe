@@ -34,7 +34,7 @@ public class PlayerVersusComputer extends AppCompatActivity implements View.OnCl
     private Button btnDismissDialog;
     private ImageView imgWinner;
 
-    private String player1Name, player2Name;
+    private String player1Name = "Computer", player2Name = "You";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
