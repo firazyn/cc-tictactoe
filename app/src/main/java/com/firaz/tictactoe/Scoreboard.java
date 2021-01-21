@@ -12,8 +12,6 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class Scoreboard extends AppCompatActivity {
-    private ArrayList<ListScoreboard> listScoreboards;
-    private ScoreboardAdapter scoreboardAdapter;
     String[] name, score;
     Cursor cursor;
     DataHelper dbHelper;
@@ -30,8 +28,8 @@ public class Scoreboard extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_main);
 
         ListView scoreListView = findViewById(R.id.lv_list);
-        listScoreboards = new ArrayList<>();
-        scoreboardAdapter = new ScoreboardAdapter(this, R.layout.adapter_view_layout, listScoreboards);
+        ArrayList<ListScoreboard> listScoreboards = new ArrayList<>();
+        ScoreboardAdapter scoreboardAdapter = new ScoreboardAdapter(this, R.layout.adapter_view_layout, listScoreboards);
         scoreListView.setAdapter(scoreboardAdapter);
 
         dbHelper = new DataHelper(this);
@@ -51,7 +49,6 @@ public class Scoreboard extends AppCompatActivity {
             listScoreboard.setScore(score[i]);
             listScoreboards.add(listScoreboard);
         }
-
 
     }
 }

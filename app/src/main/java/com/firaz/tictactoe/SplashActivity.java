@@ -3,7 +3,6 @@ package com.firaz.tictactoe;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -12,7 +11,7 @@ import android.widget.TextView;
 
 public class SplashActivity extends Activity {
 
-    private static int SPLASH_TIME_OUT=5000;
+    private static final int SPLASH_TIME_OUT=5000;
 
     Animation topAnimation,bottomAnimation,middleAnimation;
     View first,second,third,fourth,fifth,sixth;

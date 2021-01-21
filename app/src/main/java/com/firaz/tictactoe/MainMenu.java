@@ -9,10 +9,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -20,9 +17,6 @@ import android.widget.Button;
 import java.util.Locale;
 
 public class MainMenu extends AppCompatActivity {
-
-    protected Cursor cursor;
-    DataHelper dbHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,14 +56,6 @@ public class MainMenu extends AppCompatActivity {
         startActivity(about);
     }
     public void scoreboard(View v) {
-//        SQLiteDatabase db = dbHelper.getReadableDatabase();
-//        cursor = db.rawQuery("SELECT * FROM scoreboard",null);
-//        cursor.moveToFirst();
-//        if (cursor.getCount()>0)
-//        {
-//            cursor.moveToPosition(0);
-//            Log.d("Data",);
-//        }
         Intent scoreboard = new Intent(MainMenu.this, Scoreboard.class);
         startActivity(scoreboard);
     }
