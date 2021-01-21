@@ -51,16 +51,16 @@ public class SplashActivity extends Activity {
         slogan.setAnimation(bottomAnimation);
 
         Thread thread = new Thread() {
-          public void run() {
-              try {
-                  sleep(SPLASH_TIME_OUT);
-              } catch (InterruptedException e) {
-                  e.printStackTrace();
-              } finally {
-                  startActivity(new Intent(SplashActivity.this,MainMenu.class));
-                  finish();
-              }
-          }
+            public void run() {
+                try {
+                    sleep(SPLASH_TIME_OUT);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    startActivity(new Intent(SplashActivity.this,MainMenu.class));
+                    finish();
+                }
+            }
         };
 
         thread.start();

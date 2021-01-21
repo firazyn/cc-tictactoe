@@ -6,11 +6,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
+import android.widget.ListView;
+
+import java.util.ArrayList;
 
 public class Scoreboard extends AppCompatActivity {
-
-    String[] nama, skor;
+    private ArrayList<ListScoreboard> listScoreboards;
+    private ScoreboardAdapter scoreboardAdapter;
+    String[] name, score;
     Cursor cursor;
     DataHelper dbHelper;
 
@@ -23,19 +26,29 @@ public class Scoreboard extends AppCompatActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(true);
         getSupportActionBar().setCustomView(R.layout.custom_actionbar_main);
 
+        ListView scoreListView = findViewById(R.id.lv_list);
+        listScoreboards = new ArrayList<>();
+        scoreboardAdapter = new ScoreboardAdapter(this, R.layout.adapter_view_layout, listScoreboards);
+        scoreListView.setAdapter(scoreboardAdapter);
+
         dbHelper = new DataHelper(this);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         cursor = db.rawQuery("SELECT * FROM scoreboard ORDER BY score DESC", null);
-        nama = new String[cursor.getCount()];
-        skor = new String[cursor.getCount()];
+        name = new String[cursor.getCount()];
+        score = new String[cursor.getCount()];
         cursor.moveToFirst();
 
         for (int i = 0; i < cursor.getCount(); i++) {
             cursor.moveToPosition(i);
-            nama[i] = cursor.getString(1);
-            skor[i] = cursor.getString(2);
+            name[i] = cursor.getString(1);
+            score[i] = cursor.getString(2);
 
-            Log.d("TAG", nama[i]+" "+skor[i]);
+            ListScoreboard listScoreboard = new ListScoreboard();
+            listScoreboard.setName(name[i]);
+            listScoreboard.setScore(score[i]);
+            listScoreboards.add(listScoreboard);
         }
+
+
     }
 }
